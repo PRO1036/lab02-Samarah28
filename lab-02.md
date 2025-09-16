@@ -26,8 +26,12 @@ plastic_waste <- plastic_waste %>%
 ### Exercise 1
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+
+         geom_histogram(binwidth = 0.2)+
+         facet_wrap(~continent)
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-continent-1.png)<!-- -->
 
 ### Exercise 2
 
