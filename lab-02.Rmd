@@ -123,8 +123,19 @@ Non, les deux graphiques semblent très semblables, les données avec la populat
 
 ## Conclusion
 
-Recréez la visualisation:
-
 ```{r recreate-viz}
-# insert code here
+plastic_waste_coastal <- plastic_waste %>% 
+  mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
+  filter(plastic_waste_per_cap < 3)
+ggplot(plastic_waste_coastal, aes(x = coastal_pop_prop,
+                     y = plastic_waste_per_cap ,
+                     colour = continent)) +
+  geom_point() +
+  labs(title = "Quantité de déchets plastiques vs proportion de la population côtière",
+       subtitle = "Selon le continent",
+       x = "Proportion de la population côtière (Coastal/total population)", y = "Nombre de déchets plastiques par habitant",
+       colour = "Continent")+
+geom_smooth()
+
 ```
+interprétation ?
