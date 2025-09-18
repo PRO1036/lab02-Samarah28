@@ -90,10 +90,14 @@ Le boxplot nous montre seulement la valeur centrale (ligne dans le carré), alor
 
 
 ```{r plastic-waste-mismanaged}
-# insert code here
+ggplot(plastic_waste, aes(x=plastic_waste_per_cap,
+                          y=mismanaged_plastic_waste_per_cap,
+                          color=continent)) +
+  geom_point()
 ```
 
-Réponse à la question...
+relation avec juste les points ???
+tendance avec les points par continent ???
 
 ### Exercise 5
 
