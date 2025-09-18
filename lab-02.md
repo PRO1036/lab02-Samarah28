@@ -123,20 +123,44 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap,
 
 ![](lab-02_files/figure-gfm/plastic-waste-mismanaged-1.png)<!-- -->
 
+``` r
+ggplot(plastic_waste, aes(x=plastic_waste_per_cap,
+                          y=mismanaged_plastic_waste_per_cap,
+                          color=continent)) +
+  geom_point()+
+  facet_wrap(~ continent)
+```
+
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-2.png)<!-- -->
+
 relation avec juste les points ??? tendance avec les points par
 continent ???
 
 ### Exercise 5
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x=total_pop,
+                          y=plastic_waste_per_cap))+
+  geom_point()
 ```
+
+    ## Warning: Removed 10 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-population-total-1.png)<!-- -->
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x=coastal_pop,
+                          y=plastic_waste_per_cap))+
+  geom_point()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-population-coastal-1.png)<!-- -->
+
+Non, les deux graphiques semblent très semblables, les données avec la
+population étant aux côtes semblent un peu plus dispersées en augmentant
+la population (vers la droite), mais la relation a l’air presque
+identique.
 
 ## Conclusion
 
