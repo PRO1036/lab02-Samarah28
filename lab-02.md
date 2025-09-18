@@ -25,6 +25,9 @@ plastic_waste <- plastic_waste %>%
 
 ### Exercise 1
 
+Que pouvez-vous dire de la comparaison des continents, en terme de
+déchets plastiques ?
+
 ``` r
 ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+
          geom_histogram(binwidth = 0.2)+
@@ -36,10 +39,52 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+
 ### Exercise 2
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap)) + 
+  geom_density()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
+
+``` r
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, 
+                  color = continent)) +
+  geom_density(alpha = 0.5) +
+  labs(
+    x = "plastic_waste_per_cap",
+    y = "Density",
+    color = "continent")
+```
+
+![](lab-02_files/figure-gfm/plastic-waste-density-2.png)<!-- -->
+
+``` r
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, 
+                  fill = continent)) +
+  geom_density() +
+  labs(
+    x = "plastic_waste_per_cap",
+    y = "Density",
+    fill = "continent"
+  )
+```
+
+![](lab-02_files/figure-gfm/plastic-waste-density-3.png)<!-- -->
+
+``` r
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, 
+                  fill = continent)) +
+  geom_density(alpha = 0.5) +
+  labs(
+    x = "plastic_waste_per_cap",
+    y = "Density",
+    fill = "continent")
+```
+
+![](lab-02_files/figure-gfm/plastic-waste-density-4.png)<!-- -->
+
+Les réglages de color et fill sont dans aes, car ce sont des réglages
+reliés à une variable (ici continent), alors que la transparence (alpha)
+se trouve dans geom_density() puisqu’il n’est pas relié à une variable.
 
 ### Exercise 3
 
