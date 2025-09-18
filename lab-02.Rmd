@@ -72,16 +72,19 @@ Les réglages de color et fill sont dans aes, car ce sont des réglages reliés 
 Boxplot:
 
 ```{r plastic-waste-boxplot}
-# insert code here
+ggplot(plastic_waste, aes(x = continent,
+                  y = plastic_waste_per_cap)) +
+  geom_boxplot()
 ```
 
 Violin plot:
 
 ```{r plastic-waste-violin}
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap)) +
+  geom_violin()
 ```
 
-Réponse à la question...
+Le boxplot nous montre seulement la valeur centrale (ligne dans le carré), alors que les violin plots nous permet de voir la dispersion en dessous et au dessous de la moyenne en montrant comment évolue la quantité de déchets par personnes. 
 
 ### Exercise 4
 

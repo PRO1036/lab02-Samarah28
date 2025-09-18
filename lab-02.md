@@ -91,16 +91,26 @@ se trouve dans geom_density() puisqu’il n’est pas relié à une variable.
 Boxplot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = continent,
+                  y = plastic_waste_per_cap)) +
+  geom_boxplot()
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-boxplot-1.png)<!-- -->
 
 Violin plot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap)) +
+  geom_violin()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-violin-1.png)<!-- -->
+
+Le boxplot nous montre seulement la valeur centrale (ligne dans le
+carré), alors que les violin plots nous permet de voir la dispersion en
+dessous et au dessous de la moyenne en montrant comment évolue la
+quantité de déchets par personnes.
 
 ### Exercise 4
 
