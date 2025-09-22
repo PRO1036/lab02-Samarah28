@@ -25,8 +25,11 @@ plastic_waste <- plastic_waste %>%
 
 ### Exercise 1
 
-Que pouvez-vous dire de la comparaison des continents, en terme de
-déchets plastiques ?
+On remarque que l’Océanie et l’Amérique du Sud ont les plus bas taux de
+déchets alors que les autres en ont plus avec une distribution
+différente mais un taux assez semblable. D’ailleurs, on remarque aussi
+que le plus haut taux de déchets se situe vers 0,25 par habitant pour
+tous les continents sauf l’Afrique.
 
 ``` r
 ggplot(plastic_waste, aes(x=plastic_waste_per_cap))+
@@ -133,8 +136,14 @@ ggplot(plastic_waste, aes(x=plastic_waste_per_cap,
 
 ![](lab-02_files/figure-gfm/plastic-waste-mismanaged-2.png)<!-- -->
 
-relation avec juste les points ??? tendance avec les points par
-continent ???
+On peut voir une relation semi linéaire avec certains points qui
+démontre que le nombre de déchets non gérés augmentent avec le nombre de
+déchets plastiques par habitant. Avec les points des continents, on peut
+voir que l’Afrique (en rouge) suit davantage cette relation dépendante,
+alors que la relation des points de l’Europe (en vert) est plutôt
+linéaire horizontalement avec un nombre de déchets plastiques non gérés
+assez stable même en augmentant la quantité de déchets plastique par
+habitant.
 
 ### Exercise 5
 
