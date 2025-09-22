@@ -164,22 +164,32 @@ identique.
 
 ## Conclusion
 
+Je remarque que les points représentent bien la relation, car ils se
+regroupent autour de la courbe de tendance, mais pas d’une manière
+linéaire. Les habitants de l’asie et de l’océanie semblent avoir la plus
+grande quantité de déchets, la plupart des habitants des continents se
+situent entre 0 et 0,3 kg de déchets par jour et l’Afrique a l’air
+d’être le continent le moins pire avec les plus bas taux de déchets en
+dessous de la courbe de tendance.
+
 ``` r
-plastic_waste_coastal <- plastic_waste %>% 
+ggplot(data=plastic_waste %>% 
   mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
-  filter(plastic_waste_per_cap < 3)
-ggplot(plastic_waste_coastal, aes(x = coastal_pop_prop,
-                     y = plastic_waste_per_cap ,
+  filter(plastic_waste_per_cap < 3), aes(x = coastal_pop_prop,
+                     y = plastic_waste_per_cap,
                      colour = continent)) +
   geom_point() +
+  geom_smooth(method = "loess", 
+               se=TRUE, 
+               colour="black", 
+               fill="grey") +
   labs(title = "Quantité de déchets plastiques vs proportion de la population côtière",
        subtitle = "Selon le continent",
        x = "Proportion de la population côtière (Coastal/total population)", y = "Nombre de déchets plastiques par habitant",
-       colour = "Continent")+
-geom_smooth()
+       colour = "Continent")
 ```
 
-    ## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+    ## `geom_smooth()` using formula = 'y ~ x'
 
     ## Warning: Removed 10 rows containing non-finite outside the scale range
     ## (`stat_smooth()`).
@@ -187,4 +197,4 @@ geom_smooth()
     ## Warning: Removed 10 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- --> interprétation ?
+![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- -->
